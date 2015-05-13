@@ -2,6 +2,7 @@ package edu.nyu.cims.compfin14.hw1;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /** Implement the Bond object (coupon-bearing bond or zero-coupon bond)
  *
@@ -36,7 +37,7 @@ public class Bond {
    * key: time
    * value: cash flow
    */
-  Map<Double,Double> cashFlow = new HashMap<Double, Double>();
+  Map<Double,Double> cashFlow = new TreeMap<Double, Double>();
 
   /**
    * Construct of the coupon bearing bond
@@ -50,7 +51,7 @@ public class Bond {
     this.couponRate=CouponRate;
     this.faceValue=FaceValue;
     this.maturity=maturity;
-    this.type=BondType.Coupon_Bearing; 
+    this.type=BondType.Coupon_Bearing;
     this.paymentFrequency=paymentfrequency; 
     this.coupon=FaceValue*CouponRate*this.paymentFrequency.getLength();
     this.cashFlow=this.getCashFlow();
